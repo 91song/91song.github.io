@@ -99,7 +99,7 @@
 为了保护系统的完整性和用户隐私权，Android 在访问受限的沙盒中运行每款应用。如果应用需要使用其沙盒以外的资源或信息，则必须明确请求权限。根据应用请求的权限类型，系统可能会自动授予权限，也可能会要求用户授予权限。
 
 声明权限根据权限的敏感性，系统可能会自动授予权限，或者需要由设备用户对请求进行许可。例如，如果您的应用请求打开设备手电筒的权限，系统将自动授予该权限。但如果您的应用需要读取用">
-<meta property="og:updated_time" content="2017-03-30T07:35:23.000Z">
+<meta property="og:updated_time" content="2017-03-30T08:04:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 中使用系统权限">
 <meta name="twitter:description" content="概述
@@ -404,6 +404,8 @@
 <blockquote>
 <p>注：系统显示的对话框说明了您的应用需要访问的权限组；它不会列出具体权限。例如，如果您请求 READ_CONTACTS 权限，系统对话框只显示您的应用需要访问设备的联系人。用户只需要为每个权限组授予一次权限。如果您的应用请求该组中的任何其他权限（已在您的应用清单中列出），系统将自动授予应用这些权限。当您请求此权限时，系统会调用您的 onRequestPermissionsResult() 回调方法，并传递 PERMISSION_GRANTED，如果用户已通过系统对话框明确同意您的权限请求，系统将采用相同方式操作。</p>
 </blockquote>
+<hr>
+<p><strong><em><a href="https://developer.android.google.cn/training/permissions/index.html" target="_blank" rel="external">https://developer.android.google.cn</a></em></strong></p>
 
       
     </div>
@@ -470,6 +472,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/07/AndroidDecompiler/" rel="prev" title="简单3步反编译 Android APK">
+                简单3步反编译 Android APK <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -545,7 +551,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -554,7 +560,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
