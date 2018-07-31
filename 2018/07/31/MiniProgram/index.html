@@ -1,0 +1,955 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Wechat," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="体验小程序请使用微信扫一扫，扫描下面小程序码：
+
+注：下载微信客户端版本号：6.3.27 及以上
+介绍
+微信小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。
+
+申请帐号请前往微信公众平台，点击右上角立即注册。
+
+选择注册的帐号类型
+填写邮箱和密码
+激活邮箱
+填写主体信息
+选择主体类型
+填写管理员信息
+完成注册
+
+开发前的准备登录小程序管理平台，完善">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识微信小程序（MiniProgram）">
+<meta property="og:url" content="http://yoursite.com/2018/07/31/MiniProgram/index.html">
+<meta property="og:site_name" content="Victor's Blog">
+<meta property="og:description" content="体验小程序请使用微信扫一扫，扫描下面小程序码：
+
+注：下载微信客户端版本号：6.3.27 及以上
+介绍
+微信小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。
+
+申请帐号请前往微信公众平台，点击右上角立即注册。
+
+选择注册的帐号类型
+填写邮箱和密码
+激活邮箱
+填写主体信息
+选择主体类型
+填写管理员信息
+完成注册
+
+开发前的准备登录小程序管理平台，完善">
+<meta property="og:image" content="https://developers.weixin.qq.com/miniprogram/dev/image/demo.jpg">
+<meta property="og:updated_time" content="2018-07-31T07:58:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初识微信小程序（MiniProgram）">
+<meta name="twitter:description" content="体验小程序请使用微信扫一扫，扫描下面小程序码：
+
+注：下载微信客户端版本号：6.3.27 及以上
+介绍
+微信小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。
+
+申请帐号请前往微信公众平台，点击右上角立即注册。
+
+选择注册的帐号类型
+填写邮箱和密码
+激活邮箱
+填写主体信息
+选择主体类型
+填写管理员信息
+完成注册
+
+开发前的准备登录小程序管理平台，完善">
+<meta name="twitter:image" content="https://developers.weixin.qq.com/miniprogram/dev/image/demo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6254717016171611000',
+      author: 'Victor'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/31/MiniProgram/"/>
+
+
+
+
+
+  <title> 初识微信小程序（MiniProgram） | Victor's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Victor's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Software Enginner</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/MiniProgram/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Victor Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Victor's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                初识微信小程序（MiniProgram）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T14:08:03+08:00">
+                2018-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Development</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/31/MiniProgram/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/07/31/MiniProgram/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="体验小程序"><a href="#体验小程序" class="headerlink" title="体验小程序"></a>体验小程序</h3><p>请使用微信扫一扫，扫描下面<strong>小程序码</strong>：</p>
+<p><img src="https://developers.weixin.qq.com/miniprogram/dev/image/demo.jpg" alt="MiniProgram demo"></p>
+<p><strong>注：下载微信客户端版本号：6.3.27 及以上</strong></p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><blockquote>
+<p>微信小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
+</blockquote>
+<h3 id="申请帐号"><a href="#申请帐号" class="headerlink" title="申请帐号"></a>申请帐号</h3><p>请前往<a href="https://mp.weixin.qq.com" target="_blank" rel="external">微信公众平台</a>，点击右上角立即注册。</p>
+<ol>
+<li>选择注册的帐号类型</li>
+<li>填写邮箱和密码</li>
+<li>激活邮箱</li>
+<li>填写主体信息</li>
+<li>选择主体类型</li>
+<li>填写管理员信息</li>
+<li>完成注册</li>
+</ol>
+<h3 id="开发前的准备"><a href="#开发前的准备" class="headerlink" title="开发前的准备"></a>开发前的准备</h3><p>登录<a href="https://mp.weixin.qq.com" target="_blank" rel="external">小程序管理平台</a>，完善小程序信息。</p>
+<ol>
+<li>绑定开发者</li>
+<li>获取 AppID</li>
+<li>安装<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html" target="_blank" rel="external">微信开发者工具</a></li>
+</ol>
+<h3 id="微信开发者工具"><a href="#微信开发者工具" class="headerlink" title="微信开发者工具"></a>微信开发者工具</h3><blockquote>
+<p>为了帮助开发者简单和高效地开发和调试微信小程序，我们在原有的公众号网页调试工具的基础上，推出了全新的<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank" rel="external">微信开发者工具</a>，集成了公众号网页调试和小程序调试两种开发模式。</p>
+</blockquote>
+<p>使用小程序调试，开发者可以完成小程序的 API 和页面的开发调试、代码查看和编辑、小程序预览和发布等功能。<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/edit.html" target="_blank" rel="external">详情</a></p>
+<h3 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h3><blockquote>
+<p>小程序开发框架的目标是通过尽可能简单、高效的方式让开发者可以在微信中开发具有原生 APP 体验的服务。</p>
+</blockquote>
+<p>框架提供了自己的视图层描述语言 WXML 和 WXSS，以及基于 JavaScript 的逻辑层框架，并在视图层与逻辑层间提供了数据传输和事件系统，可以让开发者可以方便的聚焦于数据与逻辑上。</p>
+<ul>
+<li>响应的数据绑定</li>
+</ul>
+<p>框架的核心是一个响应的数据绑定系统。框架可以让数据与视图非常简单地保持同步。当做数据修改的时候，只需要在逻辑层修改数据，视图层就会做相应的更新。通过这个简单的例子来看：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- This is our View --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span> Hello &#123;&#123;name&#125;&#125;! <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">"changeName"</span>&gt;</span> Click me! <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// This is our App Service.</span></div><div class="line"><span class="comment">// This is our data.</span></div><div class="line"><span class="keyword">var</span> helloData = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'WeChat'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Register a Page.</span></div><div class="line">Page(&#123;</div><div class="line">  <span class="attr">data</span>: helloData,</div><div class="line">  <span class="attr">changeName</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">// sent data change to view</span></div><div class="line">    <span class="keyword">this</span>.setData(&#123;</div><div class="line">      <span class="attr">name</span>: <span class="string">'MINA'</span></div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>页面管理</li>
+</ul>
+<p>框架管理了整个小程序的页面路由，可以做到页面间的无缝切换，并给以页面完整的生命周期。开发者需要做的只是将页面的数据，方法，生命周期函数注册进框架中，其他的一切复杂的操作都交由框架处理。</p>
+<ul>
+<li>基础组件</li>
+</ul>
+<p>框架提供了一套基础的组件，这些组件自带微信风格的样式以及特殊的逻辑，开发者可以通过组合基础组件，创建出强大的微信小程序。<a href="https://developers.weixin.qq.com/miniprogram/dev/component/" target="_blank" rel="external">详情</a></p>
+<ul>
+<li>丰富的 API</li>
+</ul>
+<p>框架提供丰富的微信原生 API，可以方便的调起微信提供的能力，如获取用户信息，本地存储，支付功能等。<a href="https://developers.weixin.qq.com/miniprogram/dev/api/" target="_blank" rel="external">详情</a></p>
+<h3 id="代码构成"><a href="#代码构成" class="headerlink" title="代码构成"></a>代码构成</h3><p>小程序包含一个描述整体程序的 app 和多个描述各自页面的 page，它们都是由四种格式文件构成。如下：</p>
+<ul>
+<li>JSON（*.json 表示<strong>配置</strong>）</li>
+<li>WXML（*.wxml 表示<strong>模版或结构</strong>）</li>
+<li>WXSS（*.wxss 表示<strong>样式</strong>）</li>
+<li>JS（*.js 表示<strong>逻辑或行为交互</strong>）</li>
+</ul>
+<p>一个小程序主体部分由三个文件组成，必须放在项目的根目录，如下：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>必填</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app.js</td>
+<td>是</td>
+<td>小程序逻辑</td>
+</tr>
+<tr>
+<td>app.json</td>
+<td>是</td>
+<td>小程序公共设置</td>
+</tr>
+<tr>
+<td>app.wxss</td>
+<td>否</td>
+<td>小程序公共样式表</td>
+</tr>
+</tbody>
+</table>
+<p>一个小程序页面由四个文件组成，分别是：</p>
+<table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th>必填</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>js</td>
+<td>是</td>
+<td>页面逻辑</td>
+</tr>
+<tr>
+<td>wxml</td>
+<td>是</td>
+<td>页面结构</td>
+</tr>
+<tr>
+<td>wxss</td>
+<td>否</td>
+<td>页面样式表</td>
+</tr>
+<tr>
+<td>json</td>
+<td>是</td>
+<td>页面配置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="基础库"><a href="#基础库" class="headerlink" title="基础库"></a>基础库</h3><p>为了避免新版本的基础库给线上小程序带来未知的影响，微信客户端都是携带上一个稳定版的基础库发布的。</p>
+<ul>
+<li>在新版本客户端发布后，再通过后台灰度新版本基础库，<strong>灰度</strong>时长一般为 12 ～ 24 小时，在灰度结束后，用户设备上才会有新版本的基础库。</li>
+<li>以微信 6.5.8 为例，客户端在发布时携带的是 1.1.1 基础库（6.5.7 上已全量的稳定版）发布，在 6.5.8 发布后，我们再通过后台<strong>灰度</strong> 1.2.0 基础库。</li>
+</ul>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>小程序的功能不断的增加，但是旧版本的微信客户端并不支持新功能，所以在使用这些新能力的时候需要做兼容。<a href="https://developers.weixin.qq.com/miniprogram/dev/index.html" target="_blank" rel="external">开发者文档</a>会在组件，API等页面描述中带上各个功能所支持的版本号。</p>
+<ol>
+<li>可以通过 <strong>wx.getSystemInfo</strong> 或者 <strong>wx.getSystemInfoSync</strong> 获取到小程序的基础库版本号。</li>
+<li>也可以通过 <strong>wx.canIUse</strong> 来判断是否可以在该基础库版本下直接使用对应的API或者组件。</li>
+</ol>
+<h3 id="发布前的准备"><a href="#发布前的准备" class="headerlink" title="发布前的准备"></a>发布前的准备</h3><p>如果你只是一个人开发小程序，可以暂时先跳过这部分，如果是一个团队需要先了解一些概念。</p>
+<ol>
+<li>用户身份</li>
+<li>预览</li>
+<li>上传代码</li>
+<li>小程序的版本</li>
+</ol>
+<h3 id="代码审核与发布"><a href="#代码审核与发布" class="headerlink" title="代码审核与发布"></a>代码审核与发布</h3><p>开发和测试完成之后，就需要将小程序发布给用户来使用了。</p>
+<ol>
+<li>提交审核</li>
+<li>审核信息填写<ul>
+<li>配置功能页面</li>
+<li>测试帐号</li>
+<li>完成提交</li>
+<li>代码发布</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><strong><em><a href="https://mp.weixin.qq.com" target="_blank" rel="external">https://mp.weixin.qq.com</a></em></strong><br><strong><em><a href="https://developers.weixin.qq.com/miniprogram/dev/index.html" target="_blank" rel="external">https://developers.weixin.qq.com/miniprogram/dev/index.html</a></em></strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward.jpg" alt="Victor Zheng WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward.jpg" alt="Victor Zheng Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Wechat/" rel="tag"># Wechat</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/11/JSONServer/" rel="next" title="JSONServer">
+                <i class="fa fa-chevron-left"></i> JSONServer
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/07/31/MiniProgram/"
+           data-title="初识微信小程序（MiniProgram）" data-url="http://yoursite.com/2018/07/31/MiniProgram/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Victor Zheng" />
+          <p class="site-author-name" itemprop="name">Victor Zheng</p>
+           
+              <p class="site-description motion-element" itemprop="description">Write the Code Change the World</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/victorai60" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#体验小程序"><span class="nav-number">1.</span> <span class="nav-text">体验小程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">2.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#申请帐号"><span class="nav-number">3.</span> <span class="nav-text">申请帐号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发前的准备"><span class="nav-number">4.</span> <span class="nav-text">开发前的准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微信开发者工具"><span class="nav-number">5.</span> <span class="nav-text">微信开发者工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#框架"><span class="nav-number">6.</span> <span class="nav-text">框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码构成"><span class="nav-number">7.</span> <span class="nav-text">代码构成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础库"><span class="nav-number">8.</span> <span class="nav-text">基础库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">9.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布前的准备"><span class="nav-number">10.</span> <span class="nav-text">发布前的准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码审核与发布"><span class="nav-number">11.</span> <span class="nav-text">代码审核与发布</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=463909312&auto=1&height=66"></iframe>
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Victor Zheng</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"victorai60"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

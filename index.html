@@ -270,6 +270,299 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/MiniProgram/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Victor Zheng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Victor's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/07/31/MiniProgram/" itemprop="url">
+                  初识微信小程序（MiniProgram）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T14:08:03+08:00">
+                2018-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Development/" itemprop="url" rel="index">
+                    <span itemprop="name">Development</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/31/MiniProgram/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/07/31/MiniProgram/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="体验小程序"><a href="#体验小程序" class="headerlink" title="体验小程序"></a>体验小程序</h3><p>请使用微信扫一扫，扫描下面<strong>小程序码</strong>：</p>
+<p><img src="https://developers.weixin.qq.com/miniprogram/dev/image/demo.jpg" alt="MiniProgram demo"></p>
+<p><strong>注：下载微信客户端版本号：6.3.27 及以上</strong></p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><blockquote>
+<p>微信小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
+</blockquote>
+<h3 id="申请帐号"><a href="#申请帐号" class="headerlink" title="申请帐号"></a>申请帐号</h3><p>请前往<a href="https://mp.weixin.qq.com" target="_blank" rel="external">微信公众平台</a>，点击右上角立即注册。</p>
+<ol>
+<li>选择注册的帐号类型</li>
+<li>填写邮箱和密码</li>
+<li>激活邮箱</li>
+<li>填写主体信息</li>
+<li>选择主体类型</li>
+<li>填写管理员信息</li>
+<li>完成注册</li>
+</ol>
+<h3 id="开发前的准备"><a href="#开发前的准备" class="headerlink" title="开发前的准备"></a>开发前的准备</h3><p>登录<a href="https://mp.weixin.qq.com" target="_blank" rel="external">小程序管理平台</a>，完善小程序信息。</p>
+<ol>
+<li>绑定开发者</li>
+<li>获取 AppID</li>
+<li>安装<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html" target="_blank" rel="external">微信开发者工具</a></li>
+</ol>
+<h3 id="微信开发者工具"><a href="#微信开发者工具" class="headerlink" title="微信开发者工具"></a>微信开发者工具</h3><blockquote>
+<p>为了帮助开发者简单和高效地开发和调试微信小程序，我们在原有的公众号网页调试工具的基础上，推出了全新的<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank" rel="external">微信开发者工具</a>，集成了公众号网页调试和小程序调试两种开发模式。</p>
+</blockquote>
+<p>使用小程序调试，开发者可以完成小程序的 API 和页面的开发调试、代码查看和编辑、小程序预览和发布等功能。<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/edit.html" target="_blank" rel="external">详情</a></p>
+<h3 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h3><blockquote>
+<p>小程序开发框架的目标是通过尽可能简单、高效的方式让开发者可以在微信中开发具有原生 APP 体验的服务。</p>
+</blockquote>
+<p>框架提供了自己的视图层描述语言 WXML 和 WXSS，以及基于 JavaScript 的逻辑层框架，并在视图层与逻辑层间提供了数据传输和事件系统，可以让开发者可以方便的聚焦于数据与逻辑上。</p>
+<ul>
+<li>响应的数据绑定</li>
+</ul>
+<p>框架的核心是一个响应的数据绑定系统。框架可以让数据与视图非常简单地保持同步。当做数据修改的时候，只需要在逻辑层修改数据，视图层就会做相应的更新。通过这个简单的例子来看：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- This is our View --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span> Hello &#123;&#123;name&#125;&#125;! <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">bindtap</span>=<span class="string">"changeName"</span>&gt;</span> Click me! <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// This is our App Service.</span></div><div class="line"><span class="comment">// This is our data.</span></div><div class="line"><span class="keyword">var</span> helloData = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'WeChat'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// Register a Page.</span></div><div class="line">Page(&#123;</div><div class="line">  <span class="attr">data</span>: helloData,</div><div class="line">  <span class="attr">changeName</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">// sent data change to view</span></div><div class="line">    <span class="keyword">this</span>.setData(&#123;</div><div class="line">      <span class="attr">name</span>: <span class="string">'MINA'</span></div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>页面管理</li>
+</ul>
+<p>框架管理了整个小程序的页面路由，可以做到页面间的无缝切换，并给以页面完整的生命周期。开发者需要做的只是将页面的数据，方法，生命周期函数注册进框架中，其他的一切复杂的操作都交由框架处理。</p>
+<ul>
+<li>基础组件</li>
+</ul>
+<p>框架提供了一套基础的组件，这些组件自带微信风格的样式以及特殊的逻辑，开发者可以通过组合基础组件，创建出强大的微信小程序。<a href="https://developers.weixin.qq.com/miniprogram/dev/component/" target="_blank" rel="external">详情</a></p>
+<ul>
+<li>丰富的 API</li>
+</ul>
+<p>框架提供丰富的微信原生 API，可以方便的调起微信提供的能力，如获取用户信息，本地存储，支付功能等。<a href="https://developers.weixin.qq.com/miniprogram/dev/api/" target="_blank" rel="external">详情</a></p>
+<h3 id="代码构成"><a href="#代码构成" class="headerlink" title="代码构成"></a>代码构成</h3><p>小程序包含一个描述整体程序的 app 和多个描述各自页面的 page，它们都是由四种格式文件构成。如下：</p>
+<ul>
+<li>JSON（*.json 表示<strong>配置</strong>）</li>
+<li>WXML（*.wxml 表示<strong>模版或结构</strong>）</li>
+<li>WXSS（*.wxss 表示<strong>样式</strong>）</li>
+<li>JS（*.js 表示<strong>逻辑或行为交互</strong>）</li>
+</ul>
+<p>一个小程序主体部分由三个文件组成，必须放在项目的根目录，如下：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>必填</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app.js</td>
+<td>是</td>
+<td>小程序逻辑</td>
+</tr>
+<tr>
+<td>app.json</td>
+<td>是</td>
+<td>小程序公共设置</td>
+</tr>
+<tr>
+<td>app.wxss</td>
+<td>否</td>
+<td>小程序公共样式表</td>
+</tr>
+</tbody>
+</table>
+<p>一个小程序页面由四个文件组成，分别是：</p>
+<table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th>必填</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>js</td>
+<td>是</td>
+<td>页面逻辑</td>
+</tr>
+<tr>
+<td>wxml</td>
+<td>是</td>
+<td>页面结构</td>
+</tr>
+<tr>
+<td>wxss</td>
+<td>否</td>
+<td>页面样式表</td>
+</tr>
+<tr>
+<td>json</td>
+<td>是</td>
+<td>页面配置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="基础库"><a href="#基础库" class="headerlink" title="基础库"></a>基础库</h3><p>为了避免新版本的基础库给线上小程序带来未知的影响，微信客户端都是携带上一个稳定版的基础库发布的。</p>
+<ul>
+<li>在新版本客户端发布后，再通过后台灰度新版本基础库，<strong>灰度</strong>时长一般为 12 ～ 24 小时，在灰度结束后，用户设备上才会有新版本的基础库。</li>
+<li>以微信 6.5.8 为例，客户端在发布时携带的是 1.1.1 基础库（6.5.7 上已全量的稳定版）发布，在 6.5.8 发布后，我们再通过后台<strong>灰度</strong> 1.2.0 基础库。</li>
+</ul>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>小程序的功能不断的增加，但是旧版本的微信客户端并不支持新功能，所以在使用这些新能力的时候需要做兼容。<a href="https://developers.weixin.qq.com/miniprogram/dev/index.html" target="_blank" rel="external">开发者文档</a>会在组件，API等页面描述中带上各个功能所支持的版本号。</p>
+<ol>
+<li>可以通过 <strong>wx.getSystemInfo</strong> 或者 <strong>wx.getSystemInfoSync</strong> 获取到小程序的基础库版本号。</li>
+<li>也可以通过 <strong>wx.canIUse</strong> 来判断是否可以在该基础库版本下直接使用对应的API或者组件。</li>
+</ol>
+<h3 id="发布前的准备"><a href="#发布前的准备" class="headerlink" title="发布前的准备"></a>发布前的准备</h3><p>如果你只是一个人开发小程序，可以暂时先跳过这部分，如果是一个团队需要先了解一些概念。</p>
+<ol>
+<li>用户身份</li>
+<li>预览</li>
+<li>上传代码</li>
+<li>小程序的版本</li>
+</ol>
+<h3 id="代码审核与发布"><a href="#代码审核与发布" class="headerlink" title="代码审核与发布"></a>代码审核与发布</h3><p>开发和测试完成之后，就需要将小程序发布给用户来使用了。</p>
+<ol>
+<li>提交审核</li>
+<li>审核信息填写<ul>
+<li>配置功能页面</li>
+<li>测试帐号</li>
+<li>完成提交</li>
+<li>代码发布</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><strong><em><a href="https://mp.weixin.qq.com" target="_blank" rel="external">https://mp.weixin.qq.com</a></em></strong><br><strong><em><a href="https://developers.weixin.qq.com/miniprogram/dev/index.html" target="_blank" rel="external">https://developers.weixin.qq.com/miniprogram/dev/index.html</a></em></strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/JSONServer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -718,11 +1011,13 @@
 <li>危险权限会授予应用访问用户机密数据的权限。如果您的应用在其清单中列出了正常权限，系统将自动授予该权限。如果您列出了危险权限，则用户必须明确批准您的应用使用这些权限。</li>
 </ul>
 </blockquote>
-<h4 id="请求您需要的权限"><a href="#请求您需要的权限" class="headerlink" title="请求您需要的权限"></a>请求您需要的权限</h4><p>以下代码可以检查应用是否具备读取用户联系人的权限，并根据需要请求该权限：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Here, thisActivity is the current activity</span></div><div class="line"><span class="keyword">if</span> (ContextCompat.checkSelfPermission(thisActivity,</div><div class="line">                Manifest.permission.READ_CONTACTS)</div><div class="line">        != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line"></div><div class="line">    <span class="comment">// Should we show an explanation?</span></div><div class="line">    <span class="keyword">if</span> (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,</div><div class="line">            Manifest.permission.READ_CONTACTS)) &#123;</div><div class="line"></div><div class="line">        <span class="comment">// Show an expanation to the user *asynchronously* -- don't block</span></div><div class="line">        <span class="comment">// this thread waiting for the user's response! After the user</span></div><div class="line">        <span class="comment">// sees the explanation, try again to request the permission.</span></div><div class="line"></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">        <span class="comment">// No explanation needed, we can request the permission.</span></div><div class="line"></div><div class="line">        ActivityCompat.requestPermissions(thisActivity,</div><div class="line">                <span class="keyword">new</span> String[]&#123;Manifest.permission.READ_CONTACTS&#125;,</div><div class="line">                MY_PERMISSIONS_REQUEST_READ_CONTACTS);</div><div class="line"></div><div class="line">        <span class="comment">// MY_PERMISSIONS_REQUEST_READ_CONTACTS is an</span></div><div class="line">        <span class="comment">// app-defined int constant. The callback method gets the</span></div><div class="line">        <span class="comment">// result of the request.</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="请求您需要的权限"><a href="#请求您需要的权限" class="headerlink" title="请求您需要的权限"></a>请求您需要的权限</h4><p>以下代码可以检查应用是否具备读取用户联系人的权限，并根据需要请求该权限：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Here, thisActivity is the current activity</span></div><div class="line"><span class="keyword">if</span> (ContextCompat.checkSelfPermission(thisActivity,</div><div class="line">                Manifest.permission.READ_CONTACTS)</div><div class="line">        != PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line"></div><div class="line">    <span class="comment">// Should we show an explanation?</span></div><div class="line">    <span class="keyword">if</span> (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,</div><div class="line">            Manifest.permission.READ_CONTACTS)) &#123;</div><div class="line"></div><div class="line">        <span class="comment">// Show an expanation to the user *asynchronously* -- don't block</span></div><div class="line">        <span class="comment">// this thread waiting for the user's response! After the user</span></div><div class="line">        <span class="comment">// sees the explanation, try again to request the permission.</span></div><div class="line"></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">        <span class="comment">// No explanation needed, we can request the permission.</span></div><div class="line"></div><div class="line">        ActivityCompat.requestPermissions(thisActivity,</div><div class="line">                <span class="keyword">new</span> String[]&#123;Manifest.permission.READ_CONTACTS&#125;,</div><div class="line">                MY_PERMISSIONS_REQUEST_READ_CONTACTS);</div><div class="line"></div><div class="line">        <span class="comment">// MY_PERMISSIONS_REQUEST_READ_CONTACTS is an</span></div><div class="line">        <span class="comment">// app-defined int constant. The callback method gets the</span></div><div class="line">        <span class="comment">// result of the request.</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>注：当您的应用调用 requestPermissions() 时，系统将向用户显示一个标准对话框。您的应用无法配置或更改此对话框。如果您需要为用户提供任何信息或解释，您应在调用 requestPermissions() 之前进行，如解释应用为什么需要权限中所述。</p>
 </blockquote>
-<h4 id="处理权限请求响应"><a href="#处理权限请求响应" class="headerlink" title="处理权限请求响应"></a>处理权限请求响应</h4><p>当应用请求权限时，系统将向用户显示一个对话框。当用户响应时，系统将调用应用的 onRequestPermissionsResult() 方法，向其传递用户响应。您的应用必须替换该方法，以了解是否已获得相应权限。回调会将您传递的相同请求代码传递给 requestPermissions()。例如，如果应用请求 READ_CONTACTS 访问权限，则它可能采用以下回调方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode,</span></span></div><div class="line">        String permissions[], <span class="keyword">int</span>[] grantResults) &#123;</div><div class="line">    <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">        <span class="keyword">case</span> MY_PERMISSIONS_REQUEST_READ_CONTACTS: &#123;</div><div class="line">            <span class="comment">// If request is cancelled, the result arrays are empty.</span></div><div class="line">            <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span></div><div class="line">                &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line"></div><div class="line">                <span class="comment">// permission was granted, yay! Do the</span></div><div class="line">                <span class="comment">// contacts-related task you need to do.</span></div><div class="line"></div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">                <span class="comment">// permission denied, boo! Disable the</span></div><div class="line">                <span class="comment">// functionality that depends on this permission.</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// other 'case' lines to check for other</span></div><div class="line">        <span class="comment">// permissions this app might request</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="处理权限请求响应"><a href="#处理权限请求响应" class="headerlink" title="处理权限请求响应"></a>处理权限请求响应</h4><p>当应用请求权限时，系统将向用户显示一个对话框。当用户响应时，系统将调用应用的 onRequestPermissionsResult() 方法，向其传递用户响应。您的应用必须替换该方法，以了解是否已获得相应权限。回调会将您传递的相同请求代码传递给 requestPermissions()。例如，如果应用请求 READ_CONTACTS 访问权限，则它可能采用以下回调方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRequestPermissionsResult</span><span class="params">(<span class="keyword">int</span> requestCode,</span></span></div><div class="line">        String permissions[], <span class="keyword">int</span>[] grantResults) &#123;</div><div class="line">    <span class="keyword">switch</span> (requestCode) &#123;</div><div class="line">        <span class="keyword">case</span> MY_PERMISSIONS_REQUEST_READ_CONTACTS: &#123;</div><div class="line">            <span class="comment">// If request is cancelled, the result arrays are empty.</span></div><div class="line">            <span class="keyword">if</span> (grantResults.length &gt; <span class="number">0</span></div><div class="line">                &amp;&amp; grantResults[<span class="number">0</span>] == PackageManager.PERMISSION_GRANTED) &#123;</div><div class="line"></div><div class="line">                <span class="comment">// permission was granted, yay! Do the</span></div><div class="line">                <span class="comment">// contacts-related task you need to do.</span></div><div class="line"></div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">                <span class="comment">// permission denied, boo! Disable the</span></div><div class="line">                <span class="comment">// functionality that depends on this permission.</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// other 'case' lines to check for other</span></div><div class="line">        <span class="comment">// permissions this app might request</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>注：系统显示的对话框说明了您的应用需要访问的权限组；它不会列出具体权限。例如，如果您请求 READ_CONTACTS 权限，系统对话框只显示您的应用需要访问设备的联系人。用户只需要为每个权限组授予一次权限。如果您的应用请求该组中的任何其他权限（已在您的应用清单中列出），系统将自动授予应用这些权限。当您请求此权限时，系统会调用您的 onRequestPermissionsResult() 回调方法，并传递 PERMISSION_GRANTED，如果用户已通过系统对话框明确同意您的权限请求，系统将采用相同方式操作。</p>
 </blockquote>
@@ -1140,7 +1435,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1158,7 +1453,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1211,7 +1506,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
